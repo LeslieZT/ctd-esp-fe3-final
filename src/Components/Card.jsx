@@ -1,20 +1,45 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import { ContextGlobal } from "../Context/global.context";
 
+const Card = ({ name, username, id, isFavorite }) => {
+  const { toggleFavorite } = useContext(ContextGlobal);
 
-const Card = ({ name, username, id }) => {
+  const [fav, setFav] = useState(isFavorite);
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-  }
+  const addFav = () => {
+    const value = !fav;
+    setFav(value);
+    toggleFavorite({ id, isFavorite: value });
+    alert(`${!fav ? "Added to favorites" : "Removed from favorites"}`);
+  };
 
   return (
-    <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
+    <div className="max-w-[200px] border-2 border-gray-200 p-2 ">
+      <img src={"../../public/images/doctor.jpg"} alt={`${id}-card`} />
+      <div className="text-center my-4">
+        <Link
+          to={`/detail/${id}`}
+          className="hover:text-[#888888] hover:font-semibold dark:hover:text-yellow-500"
+        >
+          <h3>{name}</h3>
+        </Link>
+        <h4>{username}</h4>
+      </div>
 
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+      <button
+        onClick={addFav}
+        className="bg-gray-200 w-full p-2 text-yellow-500 flex items-center justify-center"
+      >
+        {" "}
+        {fav ? (
+          <FaStar className="h-5 w-5" />
+        ) : (
+          <FaRegStar className="h-5 w-5" />
+        )}
+      </button>
     </div>
   );
 };

@@ -1,12 +1,25 @@
-import React from 'react'
+import { FaSquareFacebook, FaSquareInstagram } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { AiFillTikTok } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <footer>
-        <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
+    <footer className="mt-10">
+      <div className="flex flex-col md:flex-row justify-evenly items-center py-4 px-10 bg-gray-100 shadow-inherit  dark:bg-[#dbe1ec]">
+        <img
+          src="../public/images/DH.png"
+          alt="DH-logo"
+          className="h-16 w-64"
+        />
+        <div className="flex gap-4 justify-center items-center">
+          <FaSquareFacebook className="h-7 w-7 text-black dark:text-white" />
+          <FaSquareInstagram className="h-7 w-7 text-black dark:text-white" />
+          <AiFillTikTok className="h-7 w-7 text-black dark:text-white" />
+          <IoLogoWhatsapp className="h-7 w-7 text-black dark:text-white" />
+        </div>
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
