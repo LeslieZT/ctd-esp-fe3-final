@@ -18,7 +18,7 @@ const Card = ({ name, username, id, isFavorite }) => {
 
   return (
     <div className="max-w-[200px] border-2 border-gray-200 p-2 ">
-      <img src={"../../public/images/doctor.jpg"} alt={`${id}-card`} />
+      <img src={"https://res.cloudinary.com/dyntsz5qv/image/upload/v1733428959/doctor_wob2v0.jpg"} alt={`${id}-card`} />
       <div className="text-center my-4">
         <Link
           to={`/detail/${id}`}

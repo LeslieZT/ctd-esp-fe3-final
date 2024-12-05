@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="mt-10">
       <div className="flex flex-col md:flex-row justify-evenly items-center py-4 px-10 bg-gray-100 shadow-inherit  dark:bg-[#dbe1ec]">
         <img
-          src="../public/images/DH.png"
+          src="https://res.cloudinary.com/dyntsz5qv/image/upload/v1733428959/DH_lnqrjc.png"
           alt="DH-logo"
           className="h-16 w-64"
         />
